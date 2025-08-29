@@ -45,6 +45,12 @@ Feel free to **fork** this repo and open a **pull request**.
 
 ---
 
+## 🎉 Acknowledgements
+
+-   This project was inspired by and built to fulfill the requirements of the [freeCodeCamp "Build a Survey Form"](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form) challenge.
+
+---
+
 ## ⭐ Support
 If you like this project, give it a **star ⭐** on GitHub!  
 
@@ -55,8 +61,4 @@ If you like this project, give it a **star ⭐** on GitHub!
 📧 Contact: [EMAIL ID](littlecodly@gmail.com)
 🌐 GitHub: [@DEMON-CODLY](https://github.com/demon-codly)
 
-
-### 🎉 Acknowledgements
-
--   This project was inspired by and built to fulfill the requirements of the [freeCodeCamp "Build a Survey Form"](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form) challenge.
 
