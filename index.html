@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!--this is the header section-->
+        <h1 id="title">XYZ Company</h1>
+        <p id="description">Thank you for taking the time to help us improve the platform</p>
+    </header>
+    <main>
+        <!--this is the main section-->
+        <form id="survey-form" action="thankyou.html">
+            <div class="personal-info"> <!--personal info-->
+                <label id="name-label" for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <label id="email-label" for="email">Email </label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <label id="number-label" for="number">Age (optional)</label>
+                <input type="number" id="number" min="10" max="99" placeholder="Enter your age">
+            </div>
+
+
+            <div> <!--current job-->
+                <p for="dropdown">Which option best describes your current role?</p> 
+                <select id="dropdown" required="true">
+                    <option disabled selected value>Select from option</option>
+                    <option value="student">Student</option>
+                    <option value="full-time-job">Full Time Job</option>    
+                    <option value="full-time-learner">Full Time Learner</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>    
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+
+            <div> <!--recommendation to friend-->
+                <p for="recommend">Would you recommend XYZ Company to a friend?</p>
+                <label><input type="radio" name="radio" value="definitely">Definitely</label>
+                <label><input type="radio" name="radio" value="maybe">Maybe</label>
+                <label><input type="radio" name="radio" value="notsure">NotSure</label>
+            </div>
+
+            <div> <!--favorite feature-->
+                <p for="feature">What is your favorite feature of XYZ Company?</p>
+                    <select id="feature" required="true">
+                    <option disabled selected value>Select from option</option>
+                    <option value="challenges">Challenges</option>
+                    <option value="projects">Projects</option>    
+                    <option value="community">Community</option>
+                    <option value="open source">Open Source</option>    
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div> <!--improvement-->
+                <p for="improve">What would you like to see improved? (Check all that apply)</p>
+                <label><input type="checkbox" name="improve" value="Front-end Projects">Front-end Projects</label>
+                <label><input type="checkbox" name="improve" value="Data Visualization">Data Visualization</label>
+                <label><input type="checkbox" name="improve" value="Back-end Projects">Back-end Projects</label>
+                <label><input type="checkbox" name="improve" value="Challenges">Challenges</label>
+                <label><input type="checkbox" name="improve" value="Open Source Community">Open Source Community</label>
+                <label><input type="checkbox" name="improve" value="Gitter help rooms">Gitter help rooms</label>
+                <label><input type="checkbox" name="improve" value="Videos">Videos</label>
+                <label><input type="checkbox" name="improve" value="City Meetups">City Meetups</label>
+                <label><input type="checkbox" name="improve" value="Wiki">Wiki</label>
+                <label><input type="checkbox" name="improve" value="Forum">Forum</label>
+            </div>
+
+            <div> <!--comments--> 
+                <p for="comemnt">Any comments or suggestions?</p>
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Enter your comment here..."></textarea>
+            </div>
+
+            <section> <!--submit button-->
+                <button id="submit" type="submit">Submit</button>
+            </section>
+        </form>
+    </main>
+    <footer>
+        <!--This is footer section-->
+    </footer>
+
+    <script>
+        // Our JavaScript will go here
+        // 1. Select the elements we need
+        const submitButton = document.getElementById('submit');
+        const requiredInputs = document.querySelectorAll('input[required]');
+
+        // 2. A function to check if all required fields are filled
+        function checkInputs() {
+            let allFilled = true; // Assume all are filled initially
+            requiredInputs.forEach(input => {
+                // If any required input is empty, our assumption is false
+                if (input.value.trim() === '') {
+                    allFilled = false;
+                }
+            });
+            // Disable the button if 'allFilled' is false, enable it if true
+            submitButton.disabled = !allFilled;
+        }
+
+        // 3. Disable the button when the page first loads
+        checkInputs();
+
+        // 4. Add an event listener to each required input
+        requiredInputs.forEach(input => {
+        
+        // Run the checkInputs function every time the user types or pastes
+        input.addEventListener('input', checkInputs);
+        });
+    </script>
+</body>
+</html>
+
